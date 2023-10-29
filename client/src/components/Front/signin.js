@@ -45,8 +45,16 @@ const SignInUser = () => {
     <div
       className="mainLayout"
       style={{ minHeight: `${window.innerHeight}px` }}
-    >    <h1>Login</h1>
-      
+    >      {" "}
+      <img
+              onClick={() => {
+                navigate("/");
+              }}
+              alt=""
+              src="https://res.cloudinary.com/dewkx66gl/image/upload/v1695980190/pngwing.com_2_n6furk.png"
+              className="companyname-img "
+            />{" "}
+      <p>Rixos  Login </p>
       <div className="formsp">
   
         <form onSubmit={Formik.handleSubmit} className="myform">
@@ -82,23 +90,11 @@ const SignInUser = () => {
 
           <div></div>
           {loading ? (
-            <div style={{
-                display:"flex",
-                width:'100%',
-              justifyContent:"center",
-              alignItems: 'center',
-                
-            
-              }}>
-                 <CircleSpinner color="aqua" />
-
-           
-              </div>
-          
+            <div className="submitinput">
+              <CircleSpinner color="aqua" size={13}/>
+            </div>
           ) : (
-            <Button type="submit" className="btnlength">
-              Login
-            </Button>
+            <input type="submit" className="submitinput" name="Sign" />
           )}
 
           <div className="signin">
@@ -110,7 +106,7 @@ const SignInUser = () => {
             </p>
             <p
               className="forgottenp"
-              onClick={() => navigate("/user/login/forgottenpassword")}
+              onClick={() => navigate("/account/forgotten_credentials")}
             >
               Forgotten password ?
             </p>

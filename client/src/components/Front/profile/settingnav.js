@@ -14,6 +14,7 @@ import { Signout } from "../../../store/actions/adminActions";
 import { IconButton } from "@mui/material";
 import { enableScroll } from "../../utils/reuseable";
 import MobileTopNav from "../../utils/mobilenav";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
 
 const SettingsPanel = () => {
 
@@ -53,6 +54,10 @@ const SettingsPanel = () => {
             <p onClick={() => navigate("/client/panel/records")}>
               <ListCheck />
               <span>Order Records</span>
+            </p>
+            <p onClick={() => navigate("/client/panel/specail_orders")}>
+              <MdOutlineDashboardCustomize />
+              <span> Special Order </span>
             </p>
             <p
               onClick={() => navigate("/client/panel/settings")}
@@ -108,6 +113,10 @@ const SettingsPanel = () => {
             <p onClick={() => navigate("/client/panel/records")}>
               <ListCheck />
               <span>Order Records</span>
+            </p>
+            <p onClick={() => navigate("/client/panel/specail_orders")}>
+              <MdOutlineDashboardCustomize />
+              <span> Special Order </span>
             </p>
             <p
               onClick={() => navigate("/client/panel/settings")}

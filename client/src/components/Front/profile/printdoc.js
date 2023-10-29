@@ -11,7 +11,7 @@ const PrintDoc = (props) => {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
-  console.log({ select: order });
+ 
   return (
     <div className="column-styles">
       <div className="row-styles-right">
@@ -22,7 +22,7 @@ const PrintDoc = (props) => {
           </IconButton>
           <span style={{ color: "rgb(2, 2, 26)", fontWeight: "bold" }}>
             {" "}
-            Print Proof
+            Print 
           </span>
         </div>
       </div>
@@ -35,26 +35,35 @@ const PrintDoc = (props) => {
           Customer name {": "}{" "}
           <span style={{ color: " rgb(0, 0, 0)" }}>{order.customername}</span>
         </p>
+        <p style={{ color: "rgb(2, 2, 26)"}}>
+          Check in Date: {format(new Date(order.from), "eee dd MMM yyyy")}
+        </p>
+        <p
+        style={{ color: "rgb(2, 2, 26)"}}
+        >
+          Check out Date: {format(new Date(order.to), "eee dd MMM yyyy")}
+        </p>
+
 
         <p style={{ color: "rgb(2, 2, 26)" }}>
-          Purchased on {format(new Date(order.createdAt), "EEEE dd yyyy")}
+          Purchased on {format(new Date(order.createdAt), "eee dd MMM yyyy")}
         </p>
 
         <p style={{ color: "rgb(2, 2, 26)"}}>
           Room number{" "}
-          <span style={{ color: "  rgb(0, 0, 0)" }}>{order.room_number}</span>
+         {order.room_number}
         </p>
 
         <p style={{ color: "rgb(2, 2, 26)", }}>
           {" "}
           ORDER ID {": "}{" "}
-          <span style={{ color: " rgb(0, 0, 0)" }}>{order.orderId}</span>
+          {order.orderId}
         </p>
 
         <p style={{ color: "rgb(2, 2, 26)" }}>
           {" "}
           Total Account {": "}{" "}
-          <span style={{ color: " rgb(0, 0, 0)" }}>GH₵ {order.price}</span>
+        GH₵ {order.price}
         </p>
 
         <div

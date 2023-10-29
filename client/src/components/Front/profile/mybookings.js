@@ -13,10 +13,12 @@ const BookingsRecord = (props) => {
           myAccount.account.bookings.map((book, index) => {
             return (
               <div key={index}>
-                <RoomBox
+                <RoomBox 
                   data={book}
                   setData={props.setData}
                   setMsg={props.setMsg}
+                  setroom={props.setroom} setcontact={props.setcontact}
+                  setorderid={props.setorderid} setRefund={props.setRefund}
                 />
               </div>
             );
